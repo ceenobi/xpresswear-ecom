@@ -17,8 +17,7 @@ import { getError } from '../utils/error'
 import { useForm } from 'react-hook-form'
 import { ToastContainer, toast, Slide } from 'react-toastify'
 import Head from 'next/head'
-// import { Formik } from 'formik'
-// import * as Yup from 'yup'
+import Spin from '../components/Spinner'
 
 export default function Register() {
   const {
@@ -30,6 +29,7 @@ export default function Register() {
   const { redirect } = router.query
   const { state, dispatch } = useContext(Store)
   const { userInfo } = state
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     if (userInfo) {
@@ -46,6 +46,7 @@ export default function Register() {
       return
     }
     try {
+       setLoading(true)
       const { data } = await axios.post('/api/users/register', {
         name,
         email,
@@ -53,8 +54,10 @@ export default function Register() {
       })
       dispatch({ type: 'USER_LOGIN', payload: data })
       Cookies.set('userInfo', data)
+        setLoading(false)
       router.push(redirect || '/')
     } catch (err) {
+        setLoading(false)
       toast.error(getError(err), {
         position: toast.POSITION.TOP_CENTER,
         transition: Slide,
@@ -72,6 +75,7 @@ export default function Register() {
           <h1 className='mt-2 text-md-start text-center'>Register</h1>
         </Container>
         <div className='py-5 px-4 main-bg'>
+          {loading && <Spin/>}
           <Row className='py-5 justify-content-center'>
             <Col lg={5} md={5}>
               <Form onSubmit={handleSubmit(submitHandler)}>

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext} from 'react'
 import { Nav, Navbar, Container, Badge } from 'react-bootstrap'
 import Link from 'next/link'
 import Toggleswitch from './Toggleswitch'
@@ -30,15 +30,14 @@ export default function Navbaz({ theme, toggleTheme }) {
     dispatch({ type: 'USER_LOGOUT' })
     Cookies.remove('userInfo')
     Cookies.remove('cartItems')
-    Cookies.remove('shippinhAddress')
+    Cookies.remove('shippingAddress')
     Cookies.remove('paymentMethod')
-    router.push('/')
+    router.push('/')  
   }
 
   return (
     <Navmenu>
       <Navbar
-        collapseOnSelect
         variant='none'
         expand='lg'
         style={{ background: '#000000' }}
@@ -47,7 +46,7 @@ export default function Navbaz({ theme, toggleTheme }) {
         <Container>
           <Offcanv />
           <Link href='/' passHref>
-            <Navbar.Brand className='text-uppercase flex-grow-1 flex-lg-grow-0 justify-content-center'>
+            <Navbar.Brand className='fw-bold text-uppercase flex-grow-1 flex-lg-grow-0'>
               XpressWear
             </Navbar.Brand>
           </Link>
@@ -64,7 +63,7 @@ export default function Navbaz({ theme, toggleTheme }) {
               </Link>
               <Link href='/shop/clothing' passHref>
                 <div className='menudown'>
-                  <p className='menubtn cart-text'>Clothing</p>
+                  <p className='menubtn cart-text active'>Clothing</p>
                   <div className='menudown-content border-top'>
                     <ClothingMenu />
                   </div>
@@ -72,7 +71,7 @@ export default function Navbaz({ theme, toggleTheme }) {
               </Link>
               <Link href='/shop/bag' passHref>
                 <div className='menudown'>
-                  <p className='menubtn cart-text'>Bag</p>
+                  <p className='menubtn cart-text active'>Bag</p>
                   <div className='menudown-content border-top'>
                     <BagMenu />
                   </div>
@@ -113,10 +112,10 @@ export default function Navbaz({ theme, toggleTheme }) {
               {/* <Search className='' /> */}
             </Nav>
           </Navbar.Collapse>
-
+          <>
             {userInfo ? (
-              <div className='hoverdown'>
-                <p className='hoverbtn cart-text my-2'>{userInfo.name}</p>
+              <div className='hoverdown ms-auto'>
+                <p className='hoverbtn cart-text px- my-2'>{userInfo.name}</p>
                 <div className='hoverdown-content'>
                   <p
                     type='button'
@@ -162,11 +161,12 @@ export default function Navbaz({ theme, toggleTheme }) {
                     </Badge>
                   </div>
                 ) : (
-                  <i className='bi bi-cart-fill'></i>
+                  <i className='bi bi-cart-fill px-'></i>
                 )}
               </Nav.Link>
             </Link>
             <Toggleswitch toggleTheme={toggleTheme} theme={theme} />
+          </>
         </Container>
       </Navbar>
     </Navmenu>

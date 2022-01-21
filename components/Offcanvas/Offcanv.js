@@ -1,6 +1,6 @@
 import React, {useState } from 'react'
 import { Offcanvas, Nav, Container} from 'react-bootstrap'
-import Search from '../Search'
+// import Search from '../Search'
 import Link from 'next/link'
 
 function OffCanvaz({ name, ...props }) {
@@ -33,7 +33,9 @@ function OffCanvaz({ name, ...props }) {
                 <Nav.Link className='mb-2 border-bottom'>Shop</Nav.Link>
               </Link>
               <Link href='/shop/products' passHref>
-                <Nav.Link className='mb-2 border-bottom'>Clothing</Nav.Link>
+                <Nav.Link className='mb-2 border-bottom'>
+                  Clothing
+                </Nav.Link>
               </Link>
               <Link href='/shop/products' passHref>
                 <Nav.Link className='mb-2 border-bottom'>Bag</Nav.Link>

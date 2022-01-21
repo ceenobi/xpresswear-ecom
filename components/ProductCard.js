@@ -28,8 +28,9 @@ export default function ProductCard({ product }) {
               blurDataURL={product.image}
               src={product.image}
               title={product.name}
-              width='500px'
-              height='600px'
+              width={500}
+              height={600}
+              priority
             />
           </Link>
         </Container>
