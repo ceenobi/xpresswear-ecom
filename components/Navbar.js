@@ -5,7 +5,7 @@ import Toggleswitch from './Toggleswitch'
 import { Store } from '../utils/store'
 import Cookies from 'js-cookie'
 import { useRouter } from 'next/router'
-import Search from './Search'
+// import Search from './Search'
 import Offcanv from './Offcanvas/Offcanv'
 import styled from 'styled-components'
 import ShopMenu from './SubNavmenu/ShopMenu'
@@ -38,6 +38,7 @@ export default function Navbaz({ theme, toggleTheme }) {
   return (
     <Navmenu>
       <Navbar
+        collapseOnSelect
         variant='none'
         expand='lg'
         style={{ background: '#000000' }}
@@ -46,10 +47,11 @@ export default function Navbaz({ theme, toggleTheme }) {
         <Container>
           <Offcanv />
           <Link href='/' passHref>
-            <Navbar.Brand className='fw-bold justify-content-center text-uppercase'>
+            <Navbar.Brand className='text-uppercase flex-grow-1 flex-lg-grow-0 justify-content-center'>
               XpressWear
             </Navbar.Brand>
           </Link>
+
           <Navbar.Collapse id='basic-navbar-nav' className='d-none d-lg-block'>
             <Nav className='me-auto mt-3'>
               <Link href='/shop/products' passHref>
@@ -111,10 +113,10 @@ export default function Navbaz({ theme, toggleTheme }) {
               {/* <Search className='' /> */}
             </Nav>
           </Navbar.Collapse>
-          <Navbar>
+
             {userInfo ? (
               <div className='hoverdown'>
-                <p className='hoverbtn cart-text px-2 my-2'>{userInfo.name}</p>
+                <p className='hoverbtn cart-text my-2'>{userInfo.name}</p>
                 <div className='hoverdown-content'>
                   <p
                     type='button'
@@ -160,12 +162,11 @@ export default function Navbaz({ theme, toggleTheme }) {
                     </Badge>
                   </div>
                 ) : (
-                  <i className='bi bi-cart-fill px-2'></i>
+                  <i className='bi bi-cart-fill'></i>
                 )}
               </Nav.Link>
             </Link>
             <Toggleswitch toggleTheme={toggleTheme} theme={theme} />
-          </Navbar>
         </Container>
       </Navbar>
     </Navmenu>

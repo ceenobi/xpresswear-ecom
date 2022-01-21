@@ -10,8 +10,8 @@ function OffCanvaz({ name, ...props }) {
   const handleShow = () => setShow(true)
 
   return (
-    <div className='align-self-lg-center d-lg-none '>
-      <i className='bi bi-list text-info' onClick={handleShow} type='button' />
+    <div className='align-self-lg-center d-lg-none flex-grow-1'>
+      <i className='bi bi-list' onClick={handleShow} type='button' />
       <Offcanvas
         show={show}
         onHide={handleClose}
@@ -48,11 +48,11 @@ function OffCanvaz({ name, ...props }) {
                 <Nav.Link className='mb-2 border-bottom'>Belts</Nav.Link>
               </Link>
               <Link href='/shop/products' passHref>
-                <Nav.Link className='mb-2 border-bottom'>Fragrance</Nav.Link>
+                <Nav.Link className='mb-2 border-bottom'>Help</Nav.Link>
               </Link>
-              <Nav className='mx-3 mt-4'>
+              {/* <Nav className='mx-3 mt-4'>
                 <Search />
-              </Nav>
+              </Nav> */}
             </Nav>
           </Container>
         </Offcanvas.Body>
