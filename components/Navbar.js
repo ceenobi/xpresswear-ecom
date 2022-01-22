@@ -129,7 +129,7 @@ export default function Navbaz({ theme, toggleTheme }) {
                   >
                     <small>Order History</small>
                   </p>
-                  {userInfo.isAdmin && (
+                  {/* {userInfo.isAdmin && (
                     <p
                       type='button'
                       onClick={(e) =>
@@ -138,7 +138,7 @@ export default function Navbaz({ theme, toggleTheme }) {
                     >
                       <small> Admin Dashboard</small>
                     </p>
-                  )}
+                  )} */}
                   <p type='button' onClick={logoutClickHandler}>
                     <small>Logout</small>
                   </p>
