@@ -31,6 +31,7 @@ export default function ProductCard({ product }) {
               width={500}
               height={600}
               priority
+              alt={product.name}
             />
           </Link>
         </Container>

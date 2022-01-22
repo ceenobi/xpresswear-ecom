@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useRouter } from 'next/router'
 import {Store} from '../utils/store'
 import db from '../utils/db'
@@ -289,11 +289,11 @@ export async function getServerSideProps({ query }) {
   });
   await db.disconnect();
 
-  // const products = productDocs.map(db.convertDocToObj);
+  const products = productDocs.map(db.convertDocToObj);
 
   return {
     props: {
-      productDocs : productDocs.map(db.convertDocToObj),
+      products,
       countProducts,
       page,
       pages: Math.ceil(countProducts / pageSize),

@@ -19,9 +19,7 @@ export default function Layout({ title, description, children }) {
     <>
       <Head>
         <title>{title ? `${title} - C-Store` : 'C-Store'}</title>
-        {description && (
-          <meta name='description' content={product.decription}></meta>
-        )}
+        {description && <meta name='description' content={description}></meta>}
       </Head>
       <ThemeProvider theme={themeMode}>
         <GlobalStyles />

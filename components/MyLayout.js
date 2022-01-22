@@ -10,20 +10,19 @@ import { useRouter } from 'next/router'
 import Toggleswitch from './Toggleswitch'
 
 export default function MyLayout({ title, description, children }) {
+   const router = useRouter()
   const [theme, toggleTheme, componentMounted] = useDarkMode()
   const themeMode = theme === 'light' ? lightTheme : darkTheme
 
   if (!componentMounted) {
     return <div />
   }
-  const router = useRouter()
+ 
   return (
     <div>
       <Head>
         <title>{title ? `${title} - C-Store` : 'C-Store'}</title>
-        {description && (
-          <meta name='description' content={product.decription}></meta>
-        )}
+        {description && <meta name='description' content={description}></meta>}
       </Head>
       <ThemeProvider theme={themeMode}>
         <GlobalStyles />
@@ -38,7 +37,6 @@ export default function MyLayout({ title, description, children }) {
                 onClick={() => router.back()}
                 className='align-self-center flex-grow-1'
               >
-                {' '}
                 <i className='bi bi-arrow-left-short'></i>
                 Back
               </Nav.Link>
@@ -49,7 +47,6 @@ export default function MyLayout({ title, description, children }) {
               </Navbar.Brand>
             </Link>
             <Nav className='ms-auto'>
-              {' '}
               <Toggleswitch toggleTheme={toggleTheme} theme={theme} />
             </Nav>
           </Container>

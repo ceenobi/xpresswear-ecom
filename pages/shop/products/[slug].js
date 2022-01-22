@@ -75,9 +75,10 @@ export default function ProductInfo({product}) {
     }
   }
 
-  useEffect(() => {
-    fetchReviews()
-  }, [])
+ useEffect(() => {
+   fetchReviews()
+ }, [])
+
 
   if (!product) {
     return (
@@ -148,7 +149,7 @@ export default function ProductInfo({product}) {
 
                 <div className='d-flex'>
                   <Rating value={product.rating} readOnly></Rating>
-                  <Link href='#reviews'>
+                  <Link href='#reviews' passHref>
                     <p type='button'>({product.numReview} reviews)</p>
                   </Link>
                 </div>

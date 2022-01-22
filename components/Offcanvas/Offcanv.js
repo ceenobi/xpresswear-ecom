@@ -3,7 +3,7 @@ import { Offcanvas, Nav, Container} from 'react-bootstrap'
 // import Search from '../Search'
 import Link from 'next/link'
 
-function OffCanvaz({ name, ...props }) {
+function OffCanvaz({ ...props }) {
   const [show, setShow] = useState(false)
 
   const handleClose = () => setShow(false)
@@ -11,7 +11,7 @@ function OffCanvaz({ name, ...props }) {
 
   return (
     <div className='align-self-lg-center d-lg-none flex-grow-1'>
-      <i className='bi bi-list' onClick={handleShow} type='button' />
+      <i className='bi bi-list' onClick={handleShow} type='button'/>
       <Offcanvas
         show={show}
         onHide={handleClose}
