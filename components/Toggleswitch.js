@@ -1,6 +1,6 @@
 import {useState} from 'react'
 import {Button} from 'react-bootstrap'
-import { func, string } from 'prop-types'
+import { func } from 'prop-types'
 
 export default function Toggleswitch({toggleTheme }) {
     const [isOff, setIsOff] = useState(true)

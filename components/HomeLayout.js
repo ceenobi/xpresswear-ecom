@@ -18,7 +18,7 @@ export default function HomeLayout({ title, description, children }) {
         <Head>
           <title>{title ? `${title} - C-Store` : 'C-Store'}</title>
           {description && (
-            <meta name='description' content={product.decription}></meta>
+            <meta name='description' content={description}></meta>
           )}
         </Head>
         <ThemeProvider theme={themeMode}>
