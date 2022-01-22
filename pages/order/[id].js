@@ -12,10 +12,10 @@ import Link from 'next/link'
 import Head from 'next/head'
 import axios from 'axios'
 import { getError } from '../../utils/error'
-import Spinner from '../../components/Spinner'
 import { ToastContainer, toast, Slide } from 'react-toastify'
 import { PayPalButtons, usePayPalScriptReducer } from '@paypal/react-paypal-js'
 import PreFooter from '../../components/PreFooter'
+import Spin from '../../components/Spinner'
 
 function reducer(state, action) {
   switch (action.type) {
@@ -155,18 +155,18 @@ export default function Order({ params }) {
       </Head>
       <>
         <div>
+          <ToastContainer />
           <Container>
             <h1 className='mt-2 text-md-start text-center'>Order summary</h1>
           </Container>
           {loading ? (
-            <Spinner />
+            <Spin />
           ) : error ? (
             <Container>
               <h6 className='mt-2 text-md-start text-center'>{error}</h6>
             </Container>
           ) : (
             <div className='py-5 px-4 main-bg'>
-              <ToastContainer />
               <Container>
                 <p className='mb-0 p-2 fw-bold lead text-info'>
                   Order id: <small>{orderId}</small>
@@ -337,7 +337,7 @@ export default function Order({ params }) {
                     {!isPaid && (
                       <div>
                         {isPending ? (
-                          <Spinner />
+                          <Spin/>
                         ) : (
                           <div>
                             <PayPalButtons
@@ -354,7 +354,6 @@ export default function Order({ params }) {
               </Row>
             </div>
           )}
-
           <PreFooter />
         </div>
       </>
