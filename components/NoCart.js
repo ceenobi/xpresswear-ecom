@@ -32,7 +32,7 @@ export default function NoCart() {
               <div className='py-5 px-lg-4 mt-lg-5'>
                 <h1 className='mb-4'>
                   {"I'm "} sorry, Human. <br />
-                  {"I'm "} afraid there's nothing here.
+                  {"I'm "} afraid {"there's"} nothing here.
                 </h1>
                 <p>
                   It appears that your shopping cart is empty. {"We're"} eagerly
