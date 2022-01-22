@@ -127,7 +127,7 @@ export default function Login() {
                 className='text-center cart-text py-5 px-4 shadow'
                 style={{ background: '#111111' }}
               >
-                <p className='mb-4 fw-bold lead'>I don't have an account</p>
+                <p className='mb-4 fw-bold lead'>I {"don't"} have an account</p>
                 <Link href={`/register?redirect=${redirect || '/'}`} passHref>
                   <Button
                     className='fw-bold mx-1 p-3 mt-2'

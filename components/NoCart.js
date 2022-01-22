@@ -25,18 +25,17 @@ export default function NoCart() {
                   width={300}
                   height={300}
                   alt='emptycart'
-                  className=''
                 />
               </div>
             </Col>
             <Col lg={6} md={6}>
               <div className='py-5 px-lg-4 mt-lg-5'>
                 <h1 className='mb-4'>
-                  I'm sorry, Human. <br />
-                  I'm afraid there's nothing here.
+                  {"I'm "} sorry, Human. <br />
+                  {"I'm "} afraid there's nothing here.
                 </h1>
-                <p className=''>
-                  it appears that your shopping cart is empty. We're eagerly
+                <p>
+                  It appears that your shopping cart is empty. {"We're"} eagerly
                   awaiting your money. Remember: the more you spend, the quicker
                   we all get to buy Lamborghinis.
                 </p>

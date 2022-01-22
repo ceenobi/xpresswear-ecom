@@ -55,7 +55,7 @@ export default function WatchMenu() {
               </div>
             </Col>
             <Col lg={4}>
-              <p className='cart-text'>Men's watch</p>
+              <p className='cart-text'>{"Men's"} watch</p>
               <ul className='list-unstyled mb-0 '>
                 <li>
                   <Link href='/' passHref>
@@ -70,7 +70,7 @@ export default function WatchMenu() {
               </ul>
             </Col>
             <Col lg={4}>
-              <p className='cart-text'>Women's watch</p>
+              <p className='cart-text'>{"Women's"} watch</p>
               <ul className='list-unstyled mb-0 '>
                 <li>
                   <Link href='/' passHref>
