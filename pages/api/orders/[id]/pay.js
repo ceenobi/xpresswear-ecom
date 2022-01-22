@@ -20,6 +20,7 @@ handler.put(async (req, res) => {
           email_address: req.body.email_address,
       }
       const paidOrder = await order.save()
+       await db.disconnect()
        res.send({message: 'order paid', order: paidOrder})
   } else {
  await db.disconnect()
