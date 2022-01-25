@@ -46,14 +46,14 @@ export default function Shipping() {
       type: 'SAVE_SHIPPING_ADDRESS',
       payload: { fullName, address, city, state, postalCode, country },
     })
-    Cookies.set('shippingAddress', {
+    Cookies.set('shippingAddress', JSON.stringify({
       fullName,
       address,
       city,
       state,
       postalCode,
       country,
-    })
+    }))
     router.push('/payment')
   }
 

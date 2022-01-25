@@ -194,6 +194,7 @@ const Bage = styled.div`
   @media screen and (max-width: 760px) and (min-width: 350px) {
     .parallax {
       height: 60%;
+      background-attachment: scroll;
     }
     .text {
       padding-top: 200px;
