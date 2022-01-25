@@ -181,6 +181,7 @@ const Bage = styled.div`
   @media screen and (max-width: 992px) and (min-width: 767px) {
     .parallax {
       height: 60%;
+      background-attachment: scroll;
     }
     .text {
       padding-top: 200px;
@@ -206,6 +207,9 @@ const Bage = styled.div`
     }
   }
   @media (max-width: 300px) {
+    .parallax {
+      background-attachment: scroll;
+    }
     .move {
       margin-top: 100rem;
     }
