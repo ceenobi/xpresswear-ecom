@@ -7,7 +7,7 @@ import { StoreProvider } from '../utils/store'
 import Router from 'next/router'
 import Head from 'next/head'
 import NProgress from 'nprogress'
-import Scrollbutton from '../utils/scrollButton'
+// import Scrollbutton from '../utils/scrollButton'
 
 function MyApp({ Component, pageProps }) {
   NProgress.configure({ showSpinner: false })
@@ -39,7 +39,7 @@ function MyApp({ Component, pageProps }) {
         <PayPalScriptProvider deferLoading={true}>
           <Layout>
             <Component {...pageProps} />
-            <Scrollbutton />
+            {/* <Scrollbutton /> */}
           </Layout>
         </PayPalScriptProvider>
       </StoreProvider>
