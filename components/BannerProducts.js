@@ -165,7 +165,7 @@ const Bage = styled.div`
     top: 30%;
     left: 30%;
   }
-  @media screen and (max-width: 1024px) and (min-width: 993px) {
+  @media screen and (max-width: 1024px) and (min-width: 992px) {
     .parallax {
       height: 35%;
     }
@@ -178,7 +178,7 @@ const Bage = styled.div`
       margin-top: 55.4rem;
     }
   }
-  @media screen and (max-width: 992px) and (min-width: 767px) {
+  @media screen and (max-width: 991px) and (min-width: 768px) {
     .parallax {
       height: 60%;
       background-attachment: scroll;
@@ -192,7 +192,7 @@ const Bage = styled.div`
       margin-top: 125rem;
     }
   }
-  @media screen and (max-width: 760px) and (min-width: 350px) {
+  @media screen and (max-width: 767px) and (min-width: 350px) {
     .parallax {
       height: 60%;
       background-attachment: scroll;

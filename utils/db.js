@@ -14,12 +14,23 @@ async function connect () {
         }
         await mongoose.disconnect();
     }
-    const db = mongoose.connect(process.env.MONGODB_URI, {
+    try {
+      const db = await mongoose.connect(process.env.MONGODB_URI, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
-    })
-    console.log('new connection');
-    connection.isConnected = db.connections[0].readyState;
+      })
+      console.log('new connection')
+      connection.isConnected = db.connections[0].readyState
+    } catch (error) {
+      console.log(error)
+      process.exit(1)
+    }
+    // const db = mongoose.connect(process.env.MONGODB_URI, {
+    //     useNewUrlParser: true,
+    //     useUnifiedTopology: true,
+    // })
+    // console.log('new connection');
+    // connection.isConnected = db.connections[0].readyState;
 }
 
 async function disconnect() {
