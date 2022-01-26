@@ -35,7 +35,7 @@ export default function Register() {
     if (userInfo) {
       router.push('/')
     }
-  }, [userInfo])
+  }, [])
 
   const submitHandler = async ({ name, email, password, confirmPassword }) => {
     if (password !== confirmPassword) {
