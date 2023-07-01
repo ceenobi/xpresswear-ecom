@@ -14,6 +14,7 @@ export default function Payment() {
     const [paymentMethod, setPaymentMethod] = useState('');
     const {state, dispatch} = useContext(Store);
     const {cart: {shippingAddress}} = state
+    
     useEffect(()=> {
         if(!shippingAddress.address) {
             router.push('/shipping')
